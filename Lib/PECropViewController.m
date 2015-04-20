@@ -85,16 +85,16 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
 
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel
                                                                                           target:self
-                                                                                          action:@selector(Cancel:)];
+                                                                                          action:@selector(cancel:)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                                            target:self
-                                                                                           action:@selector(Done:)];
+                                                                                           action:@selector(done:)];
 
     if (!self.toolbarItems) {
         UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                        target:nil
                                                                                        action:nil];
-        UIBarButtonItem *constrainButton = [[UIBarButtonItem alloc] initWithTitle:PELocalizedString(@"Crop Shape", nil)
+        UIBarButtonItem *constrainButton = [[UIBarButtonItem alloc] initWithTitle:PELocalizedString(@"Sizes", nil)
                                                                             style:UIBarButtonItemStyleBordered
                                                                            target:self
                                                                            action:@selector(constrain:)];
@@ -247,6 +247,7 @@ static inline NSString *PELocalizedString(NSString *key, NSString *comment)
         ratio = 3.0f / 2.0f;
     }
     
+//    self.cropView.cropAspectRatio = ratio;
     [self setCropAspectRatio:ratio];
 }
 
